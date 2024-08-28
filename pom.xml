@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ericsson.oss.images</groupId>
+        <artifactId>ERICrhel79image_CXP9041914</artifactId>
+        <version>1.29.1</version>
+    </parent>
+
+    <groupId>com.ericsson.oss.images</groupId>
+    <artifactId>ERICrhel79lsbimage_CXP9041915</artifactId>
+    <version>1.42.3-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>[${project.artifactId}] Image build Project</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <publish_artifact>true</publish_artifact>
+        <packaging.type>qcow2</packaging.type>
+        <thirdparty.yum.repo>https://ci-portal.seli.wh.rnd.internal.ericsson.com/static/staticRepos/RHEL7.9_OS_Patch_Set_CXP9041797-1.28.1,https://ci-portal.seli.wh.rnd.internal.ericsson.com/static/dynamicRepos/atvts818yumRepo</thirdparty.yum.repo>
+        <artifact.to.install>yum-plugin-post-transaction-actions,EXTRserverjre_CXP9035480,ERICrhel7pycompat_CXP9043883,ipvsadm,nc,bc,vim-enhanced,lsof,screen,sysstat,file,procps,procps-ng,bind-utils,ntp,autofs,ERIClitpvmmonitord_CXP9031644,ERICvmsshkeyservice_CXP9034113,haproxy,ERICenmconfiguration_CXP9031455,ERICconsulconfig_CXP9033977,libreswan,ERICsimpleavailabilitymanageragents_CXP9034284,nfs4-acl-tools</artifact.to.install>
+        <kgb.package.list>EXTRserverjre_CXP9035480::2.13.2#ERICenmconfiguration_CXP9031455::1.78.2#ERIClitpvmmonitord_CXP9031644::1.3.4#ERICvmsshkeyservice_CXP9034113::1.0.33#ERICconsulconfig_CXP9033977::1.9.1#ERICsimpleavailabilitymanageragents_CXP9034284::1.15.28</kgb.package.list>
+        <media.category>image</media.category>
+        <build.type>customize</build.type>
+        <ericsson.scm.url>scm:git:[fetch=]ssh://gerritmirror-ha.lmera.ericsson.se:29418/OSS/com.ericsson.oss.images/ERICrhel79lsbimage_CXP9041915[push=]ssh://gerrit.ericsson.se:29418/OSS/com.ericsson.oss.images/ERICrhel79lsbimage_CXP9041915</ericsson.scm.url>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>site_latest</id>
+                <distributionManagement>
+                    <site>
+                        <id>site</id>
+                        <name>Site</name>
+                        <url>${site.url}/ERICrhel79lsbimage_CXP9041915/latest</url>
+                    </site>
+                </distributionManagement>
+        </profile>
+
+        <profile>
+            <id>site_review</id>
+                <distributionManagement>
+                    <site>
+                        <id>site</id>
+                        <name>Site</name>
+                        <url>${site.url}</url>
+                    </site>
+                </distributionManagement>
+        </profile>
+    </profiles>
+
+    <distributionManagement>
+        <site>
+            <id>site</id>
+            <name>Site</name>
+            <url>${site.url}/ERICrhel79lsbimage_CXP9041915/${project.version}</url>
+        </site>
+    </distributionManagement>
+
+<scm>
+        <connection>scm:git:ssh://gerrit-gamma.gic.ericsson.se:29418/OSS/ENM-Parent/SQ-Gate/com.ericsson.oss.images/ERICrhel79lsbimage_CXP9041915</connection>
+	<developerConnection>scm:git:ssh://gerrit-gamma.gic.ericsson.se:29418/OSS/ENM-Parent/SQ-Gate/com.ericsson.oss.images/ERICrhel79lsbimage_CXP9041915</developerConnection>
+  <tag>ERICrhel79lsbimage_CXP9041915-1.41.3</tag>
+  </scm>
+
+
+</project>
